@@ -10,7 +10,7 @@ Zaduženja:
 
 * Vojkan Cvijović - koordinisanje modeliranja baze podataka
 
-* Radoje Vuješević -  koordinisanje osmišljavanja korisničkog interfejsa
+* Radoje Vujašević -  koordinisanje osmišljavanja korisničkog interfejsa
 
 * Aleksandar Miletić - koordinisanje pravljenja prototipa
 
