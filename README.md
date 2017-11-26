@@ -8,10 +8,8 @@ Zaduženja:
 
 * Kristina Stanojević -  koordinisanje pravljenja predloga arhitekture
 
-* Vojkan Cvijović - koordinisanje modeliranja baze podataka
-
-* Radoje Vujašević -  koordinisanje osmišljavanja korisničkog interfejsa
+* Vojkan Cvijović - koordinisanje podelom posla, identifikacija zadataka i unošenje istih u sistem za kontrolu verzija i osmišljavanje inicijalne strukture repozitorijuma, koordinisanje osmišljavanja korisničkog interfejsa 
 
 * Aleksandar Miletić - koordinisanje pravljenja prototipa
 
-* Saša Cvetković - koordinisanje podelom posla, identifikacija zadataka i unošenje istih u sistem za kontrolu verzija i osmišljavanje inicijalne strukture repozitorijuma
+* Saša Cvetković - koordinisanje modeliranja baze podataka
