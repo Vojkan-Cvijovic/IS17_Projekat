@@ -1,17 +1,16 @@
-# IS_Projekat
+# Informacioni sistem za turističku agenciju
 
+Info:
+Sav rad se nalazi u okviru grane - develop, ideja je da se za svaki rok na
+grani master pojavljuje trenutna verzija latex dokumenta.
 
-
-Informacioni sistem za turističku agenciju
 
 Zaduženja:
 
-* Kristina Stanojević -  koordinisanje pravljenja predloga arhitekture
+Kristina Stanojević - koordinisanje pravljenja predloga arhitekture
 
-* Vojkan Cvijović - koordinisanje modeliranja baze podataka
+Vojkan Cvijović - koordinisanje podelom posla, identifikacija zadataka i unošenje istih u sistem za kontrolu verzija i osmišljavanje inicijalne strukture repozitorijuma, koordinisanje osmišljavanja korisničkog interfejsa
 
-* Radoje Vujašević -  koordinisanje osmišljavanja korisničkog interfejsa
+Aleksandar Miletić - koordinisanje pravljenja prototipa
 
-* Aleksandar Miletić - koordinisanje pravljenja prototipa
-
-* Saša Cvetković - koordinisanje podelom posla, identifikacija zadataka i unošenje istih u sistem za kontrolu verzija i osmišljavanje inicijalne strukture repozitorijuma
+Saša Cvetković - koordinisanje modeliranja baze podataka
