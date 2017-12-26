@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Aranzmani</title>
+
+
+<link rel='stylesheet prefetch'
+	href='https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.css'>
+
+<style>
+/* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+body {
+	background-image:
+		url("http://www.powerpointhintergrund.com/uploads/brown-ppt-background-15.jpg");
+}
+
+.thumbnail {
+	position: relative;
+	padding: 0px;
+	margin-bottom: 20px;
+}
+
+.thumbnail>h4 {
+	padding: 7px 5px 0px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.thumbnail h4 .info {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	font-size: 0.6em;
+	padding-left: 15px;
+	border-top-right-radius: 3px;
+	border-bottom-left-radius: 4px;
+	border-radius: 0px;
+	border-bottom-left-radius: 5px;
+	cursor: pointer;
+}
+
+.thumbnail h4 .info>span {
+	margin-right: 10px;
+}
+
+.thumbnail img {
+	width: 100%;
+}
+
+.thumbnail a.btn {
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+</style>
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	function promptForName(id) {
+		var name = prompt("Unesite ime i prezime", "");
+		if (name != null && name.trim() != "") {
+			alert("Your name is " + name);
+			console.log(id);
+
+			var data = {}
+			data["id"] = id;
+			data["name"] = name;
+
+			$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "/",
+				data : JSON.stringify(data),
+				dataType : 'json',
+				timeout : 600000,
+				statusCode : {
+					200 : function(data) {
+						alert("Rezervacija je uspesno napravljena");
+					}
+				}
+			});
+		} else {
+			alert("You did not specify your name");
+
+		}
+
+	}
+</script>
+
+
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<h1 class="text-center">
+				Aranzmani
+				</h2>
+				<hr />
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h4>
+						Pariz <span class="label label-info info"> <span
+							data-toggle="tooltip" title="viewed">257 <b
+								class="glyphicon glyphicon-eye-open"></b></span> <span
+							data-toggle="tooltip" title="viewed">3 <b
+								class="glyphicon glyphicon-star"></b></span> <span
+							data-toggle="tooltip" title="Bootstrap version">3.0.3</span>
+						</span>
+					</h4>
+					<img
+						src="http://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg"
+						alt="...">
+
+					<div class="col-md-3 col-xs-6 search_offer_info">
+
+						<p>
+							<span class="glyphicon glyphicon-calendar">Dana:9/Noći:5</span>
+						</p>
+
+
+						<p>
+							<span><svg class="svg_plane" viewBox="0 0 20 16"
+									version="1.1" xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+									x="0px" y="0px" width="20px" height="16px">
+									<path
+										d="M 19.9478 1.8545 C 19.5913 1.1392 17.4585 1.4849 16.7448 1.8433 L 13.8855 3.2786 L 4.1383 0.0261 C 3.9059 -0.0513 3.6521 0.0479 3.5323 0.2618 C 3.4128 0.4755 3.4622 0.7444 3.649 0.9017 L 9.2448 5.608 L 3.9707 8.2559 L 0.2322 7.0083 C 0.152 6.9816 0.0635 7.0157 0.0225 7.0903 C -0.0186 7.1637 -0.0024 7.2573 0.0627 7.312 L 2.7936 9.6094 C 2.7849 9.6949 2.7849 9.7806 2.7925 9.8669 L 2.6091 9.9591 C 2.3464 10.0908 2.2402 10.4094 2.3718 10.6716 C 2.5021 10.9333 2.8196 11.0393 3.0807 10.9082 L 3.2604 10.8184 C 3.3252 10.8772 3.3944 10.9302 3.4683 10.9756 L 3.6421 14.4993 C 3.6472 14.5837 3.7107 14.6533 3.7949 14.665 C 3.8306 14.6703 3.8668 14.6636 3.8969 14.6483 C 3.938 14.6278 3.9709 14.5914 3.9861 14.5457 L 5.2087 10.874 L 10.5659 8.1848 L 10.9281 15.5159 C 10.9412 15.7605 11.1248 15.9618 11.3673 15.9954 C 11.4727 16.0095 11.5745 15.9906 11.6638 15.9465 C 11.7816 15.8866 11.8754 15.7834 11.9197 15.6504 L 15.1763 5.8704 L 18.0356 4.4351 C 18.7495 4.0767 20.3041 2.5698 19.9478 1.8545 L 19.9478 1.8545 ZM 19.9478 1.8545 L 19.9478 1.8545 Z"
+										fill="#333333" /></svg></span>
+						</p>
+
+
+
+						<p>
+							<span class="glyphicon glyphicon-hand-right">03-03-2018</span>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-hand-left">11-03-2018</span>
+						</p>
+					</div>
+					<button class="btn btn-primary col-xs-12" type="button"
+						onclick="promptForName(1)">Rezervisi</button>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h4>
+						Bec <span class="label label-info info"> <span
+							data-toggle="tooltip" title="Viewed">433 <i
+								class="glyphicon glyphicon-eye-open"></i></span> <span
+							data-toggle="tooltip" title="Favorited">4 <i
+								class="glyphicon glyphicon-star"></i></span> <span
+							data-toggle="tooltip" title="Bootstrap version">3.0.3</span>
+						</span>
+					</h4>
+					<img
+						src="https://lonelyplanetimages.imgix.net/mastheads/stock-photo-st-stephens-church-112868985.jpg?sharp=10&vib=20&w=1200"
+						alt="...">
+
+					<div class="col-md-3 col-xs-6 search_offer_info">
+
+						<p>
+							<span class="glyphicon glyphicon-calendar">Dana:3/Noći:1</span>
+						</p>
+						<p>
+							<span><svg class="svg_bus" viewBox="0 0 28 16"
+									version="1.1" xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+									x="0px" y="0px" width="28px" height="16px">
+									<path class="svg_bus3"
+										d="M 21.7925 10.7103 C 20.3549 10.7103 19.1907 11.894 19.1907 13.3552 C 19.1907 14.8164 20.3549 16 21.7925 16 C 23.2296 16 24.3942 14.8164 24.3942 13.3552 C 24.3942 11.894 23.2292 10.7103 21.7925 10.7103 L 21.7925 10.7103 ZM 21.7925 14.5049 C 21.1678 14.5049 20.6611 13.9906 20.6611 13.3552 C 20.6611 12.7197 21.1678 12.2053 21.7925 12.2053 C 22.417 12.2053 22.9233 12.7197 22.9233 13.3552 C 22.9233 13.9906 22.417 14.5049 21.7925 14.5049 L 21.7925 14.5049 ZM 21.7925 14.5049 L 21.7925 14.5049 Z"
+										fill="#333333" />
+									<path class="svg_bus2"
+										d="M 6.5197 10.7103 C 5.082 10.7103 3.918 11.894 3.918 13.3552 C 3.918 14.8164 5.082 16 6.5197 16 C 7.9565 16 9.121 14.8164 9.121 13.3552 C 9.121 11.894 7.9565 10.7103 6.5197 10.7103 L 6.5197 10.7103 ZM 6.5197 14.5049 C 5.8948 14.5049 5.3883 13.9906 5.3883 13.3552 C 5.3883 12.7197 5.8948 12.2053 6.5197 12.2053 C 7.1443 12.2053 7.6503 12.7197 7.6503 13.3552 C 7.6503 13.9906 7.1443 14.5049 6.5197 14.5049 L 6.5197 14.5049 ZM 6.5197 14.5049 L 6.5197 14.5049 Z"
+										fill="#333333" />
+									<path class="svg_bus1"
+										d="M 1.5547 0 C 0.6995 0 0 0.7112 0 1.5806 L 0 11.775 C 0 12.6439 0.6995 13.3552 1.5547 13.3552 L 3.4518 13.3552 C 3.4518 11.6354 4.8278 10.2363 6.5197 10.2363 C 8.2112 10.2363 9.5875 11.6357 9.5875 13.3552 L 18.7246 13.3552 C 18.7246 11.6354 20.1008 10.2363 21.7925 10.2363 C 23.484 10.2363 24.8604 11.6357 24.8604 13.3552 L 26.4453 13.3552 C 27.3005 13.3552 28 12.6439 28 11.775 L 28 8.1399 C 28 7.2703 27.86 5.8623 27.6891 5.0103 L 26.7563 1.5485 C 26.585 0.6968 25.7458 0 24.8907 0 L 1.5547 0 L 1.5547 0 ZM 21.5397 6.6687 L 21.5397 0.9471 L 24.6193 0.9471 C 25.2606 0.9471 25.8809 1.4716 25.9979 2.1124 L 26.8335 5.5033 C 26.9326 6.0457 26.64 6.5033 26.1594 6.6313 L 25.4479 4.9175 C 25.3477 4.6763 25.0741 4.5629 24.8369 4.6648 C 24.5997 4.7667 24.4885 5.0448 24.5884 5.2864 L 25.1626 6.6687 L 21.54 6.6687 L 21.5397 6.6687 ZM 14.6221 0.9471 L 20.6072 0.9471 L 20.6072 6.6687 L 14.6221 6.6687 L 14.6221 0.9471 ZM 7.7045 0.9471 L 13.6897 0.9471 L 13.6897 6.6687 L 7.7045 6.6687 L 7.7045 0.9471 ZM 0.9531 2.1328 C 0.9531 1.4807 1.4778 0.9471 2.1191 0.9471 L 6.7717 0.9471 L 6.7717 6.6687 L 2.1191 6.6687 C 1.4778 6.6687 0.9531 6.1353 0.9531 5.4835 L 0.9531 2.1328 ZM 0.9531 5.4835 L 0.9531 5.4835 Z"
+										fill="#333333" /></svg></span>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-hand-right">13-04-2018</span>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-hand-left">16-04-2018</span>
+						</p>
+					</div>
+
+					<button class="btn btn-primary col-xs-12" type="button"
+						onclick="promptForName(2)">Rezervisi</button>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h4>
+						London <span class="label label-info info"> <span
+							data-toggle="tooltip" title="Viewed">2.1K <b
+								class="glyphicon glyphicon-eye-open"></b></span> <span
+							data-toggle="tooltip" title="Favorited">13 <b
+								class="glyphicon glyphicon-star"></b></span> <span
+							data-toggle="tooltip" title="Bootstrap version">3.0.3</span>
+						</span>
+					</h4>
+					<img
+						src="https://www.euractiv.com/wp-content/uploads/sites/2/2016/01/gherkin_city_of_london.jpeg"
+						alt="...">
+
+					<div class="col-md-3 col-xs-6 search_offer_info">
+
+						<p>
+							<span class="glyphicon glyphicon-calendar">Dana:4/Noći:2</span>
+						</p>
+						<p>
+							<span><svg class="svg_plane" viewBox="0 0 20 16"
+									version="1.1" xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+									x="0px" y="0px" width="20px" height="16px">
+									<path
+										d="M 19.9478 1.8545 C 19.5913 1.1392 17.4585 1.4849 16.7448 1.8433 L 13.8855 3.2786 L 4.1383 0.0261 C 3.9059 -0.0513 3.6521 0.0479 3.5323 0.2618 C 3.4128 0.4755 3.4622 0.7444 3.649 0.9017 L 9.2448 5.608 L 3.9707 8.2559 L 0.2322 7.0083 C 0.152 6.9816 0.0635 7.0157 0.0225 7.0903 C -0.0186 7.1637 -0.0024 7.2573 0.0627 7.312 L 2.7936 9.6094 C 2.7849 9.6949 2.7849 9.7806 2.7925 9.8669 L 2.6091 9.9591 C 2.3464 10.0908 2.2402 10.4094 2.3718 10.6716 C 2.5021 10.9333 2.8196 11.0393 3.0807 10.9082 L 3.2604 10.8184 C 3.3252 10.8772 3.3944 10.9302 3.4683 10.9756 L 3.6421 14.4993 C 3.6472 14.5837 3.7107 14.6533 3.7949 14.665 C 3.8306 14.6703 3.8668 14.6636 3.8969 14.6483 C 3.938 14.6278 3.9709 14.5914 3.9861 14.5457 L 5.2087 10.874 L 10.5659 8.1848 L 10.9281 15.5159 C 10.9412 15.7605 11.1248 15.9618 11.3673 15.9954 C 11.4727 16.0095 11.5745 15.9906 11.6638 15.9465 C 11.7816 15.8866 11.8754 15.7834 11.9197 15.6504 L 15.1763 5.8704 L 18.0356 4.4351 C 18.7495 4.0767 20.3041 2.5698 19.9478 1.8545 L 19.9478 1.8545 ZM 19.9478 1.8545 L 19.9478 1.8545 Z"
+										fill="#333333" /></svg></span>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-hand-right">07-04-2018</span>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-hand-left">11-04-2018</span>
+						</p>
+					</div>
+
+					<button class="btn btn-primary col-xs-12" type="button"
+						onclick="promptForName(3)">Rezervisi</button>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h4>
+						Budva <span class="label label-info info"> <span
+							data-toggle="tooltip" title="Viewed">11.5K <b
+								class="glyphicon glyphicon-eye-open"></b></span> <span
+							data-toggle="tooltip" title="Favorited">24 <b
+								class="glyphicon glyphicon-star"></b></span> <span
+							data-toggle="tooltip" title="Bootstrap version">3.0.3</span>
+						</span>
+					</h4>
+					<img src="http://simplesail.com/img/articles/131/18.jpg" alt="...">
+
+					<div class="col-md-3 col-xs-6 search_offer_info">
+
+						<p>
+							<span class="glyphicon glyphicon-calendar">Dana:7/Noći:6</span>
+						</p>
+						<p>
+							<span><svg class="svg_bus" viewBox="0 0 28 16"
+									version="1.1" xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+									x="0px" y="0px" width="28px" height="16px">
+									<path class="svg_bus3"
+										d="M 21.7925 10.7103 C 20.3549 10.7103 19.1907 11.894 19.1907 13.3552 C 19.1907 14.8164 20.3549 16 21.7925 16 C 23.2296 16 24.3942 14.8164 24.3942 13.3552 C 24.3942 11.894 23.2292 10.7103 21.7925 10.7103 L 21.7925 10.7103 ZM 21.7925 14.5049 C 21.1678 14.5049 20.6611 13.9906 20.6611 13.3552 C 20.6611 12.7197 21.1678 12.2053 21.7925 12.2053 C 22.417 12.2053 22.9233 12.7197 22.9233 13.3552 C 22.9233 13.9906 22.417 14.5049 21.7925 14.5049 L 21.7925 14.5049 ZM 21.7925 14.5049 L 21.7925 14.5049 Z"
+										fill="#333333" />
+									<path class="svg_bus2"
+										d="M 6.5197 10.7103 C 5.082 10.7103 3.918 11.894 3.918 13.3552 C 3.918 14.8164 5.082 16 6.5197 16 C 7.9565 16 9.121 14.8164 9.121 13.3552 C 9.121 11.894 7.9565 10.7103 6.5197 10.7103 L 6.5197 10.7103 ZM 6.5197 14.5049 C 5.8948 14.5049 5.3883 13.9906 5.3883 13.3552 C 5.3883 12.7197 5.8948 12.2053 6.5197 12.2053 C 7.1443 12.2053 7.6503 12.7197 7.6503 13.3552 C 7.6503 13.9906 7.1443 14.5049 6.5197 14.5049 L 6.5197 14.5049 ZM 6.5197 14.5049 L 6.5197 14.5049 Z"
+										fill="#333333" />
+									<path class="svg_bus1"
+										d="M 1.5547 0 C 0.6995 0 0 0.7112 0 1.5806 L 0 11.775 C 0 12.6439 0.6995 13.3552 1.5547 13.3552 L 3.4518 13.3552 C 3.4518 11.6354 4.8278 10.2363 6.5197 10.2363 C 8.2112 10.2363 9.5875 11.6357 9.5875 13.3552 L 18.7246 13.3552 C 18.7246 11.6354 20.1008 10.2363 21.7925 10.2363 C 23.484 10.2363 24.8604 11.6357 24.8604 13.3552 L 26.4453 13.3552 C 27.3005 13.3552 28 12.6439 28 11.775 L 28 8.1399 C 28 7.2703 27.86 5.8623 27.6891 5.0103 L 26.7563 1.5485 C 26.585 0.6968 25.7458 0 24.8907 0 L 1.5547 0 L 1.5547 0 ZM 21.5397 6.6687 L 21.5397 0.9471 L 24.6193 0.9471 C 25.2606 0.9471 25.8809 1.4716 25.9979 2.1124 L 26.8335 5.5033 C 26.9326 6.0457 26.64 6.5033 26.1594 6.6313 L 25.4479 4.9175 C 25.3477 4.6763 25.0741 4.5629 24.8369 4.6648 C 24.5997 4.7667 24.4885 5.0448 24.5884 5.2864 L 25.1626 6.6687 L 21.54 6.6687 L 21.5397 6.6687 ZM 14.6221 0.9471 L 20.6072 0.9471 L 20.6072 6.6687 L 14.6221 6.6687 L 14.6221 0.9471 ZM 7.7045 0.9471 L 13.6897 0.9471 L 13.6897 6.6687 L 7.7045 6.6687 L 7.7045 0.9471 ZM 0.9531 2.1328 C 0.9531 1.4807 1.4778 0.9471 2.1191 0.9471 L 6.7717 0.9471 L 6.7717 6.6687 L 2.1191 6.6687 C 1.4778 6.6687 0.9531 6.1353 0.9531 5.4835 L 0.9531 2.1328 ZM 0.9531 5.4835 L 0.9531 5.4835 Z"
+										fill="#333333" /></svg></span>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-hand-right">03-07-2018</span>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-hand-left">10-07-2018</span>
+						</p>
+					</div>
+
+					<button class="btn btn-primary col-xs-12" type="button"
+						onclick="promptForName(4)">Rezervisi</button>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h4>
+						Kopaonik <span class="label label-info info"> <span
+							data-toggle="tooltip" title="Viewed">7.3K <b
+								class="glyphicon glyphicon-eye-open"></b></span> <span
+							data-toggle="tooltip" title="Favorited">31 <b
+								class="glyphicon glyphicon-star"></b></span> <span
+							data-toggle="tooltip" title="Bootstrap version">3.0.3</span>
+						</span>
+					</h4>
+					<img
+						src="http://www.serbia-visit.com/wp-content/uploads/2016/04/KOPAONIK_SERBIA_VISIT_01.jpg"
+						alt="...">
+
+					<div class="col-md-3 col-xs-6 search_offer_info">
+
+						<p>
+							<span class="glyphicon glyphicon-calendar">Dana:7/Noći:6</span>
+						</p>
+						<p>
+							<span><svg class="svg_bus" viewBox="0 0 28 16"
+									version="1.1" xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+									x="0px" y="0px" width="28px" height="16px">
+									<path class="svg_bus3"
+										d="M 21.7925 10.7103 C 20.3549 10.7103 19.1907 11.894 19.1907 13.3552 C 19.1907 14.8164 20.3549 16 21.7925 16 C 23.2296 16 24.3942 14.8164 24.3942 13.3552 C 24.3942 11.894 23.2292 10.7103 21.7925 10.7103 L 21.7925 10.7103 ZM 21.7925 14.5049 C 21.1678 14.5049 20.6611 13.9906 20.6611 13.3552 C 20.6611 12.7197 21.1678 12.2053 21.7925 12.2053 C 22.417 12.2053 22.9233 12.7197 22.9233 13.3552 C 22.9233 13.9906 22.417 14.5049 21.7925 14.5049 L 21.7925 14.5049 ZM 21.7925 14.5049 L 21.7925 14.5049 Z"
+										fill="#333333" />
+									<path class="svg_bus2"
+										d="M 6.5197 10.7103 C 5.082 10.7103 3.918 11.894 3.918 13.3552 C 3.918 14.8164 5.082 16 6.5197 16 C 7.9565 16 9.121 14.8164 9.121 13.3552 C 9.121 11.894 7.9565 10.7103 6.5197 10.7103 L 6.5197 10.7103 ZM 6.5197 14.5049 C 5.8948 14.5049 5.3883 13.9906 5.3883 13.3552 C 5.3883 12.7197 5.8948 12.2053 6.5197 12.2053 C 7.1443 12.2053 7.6503 12.7197 7.6503 13.3552 C 7.6503 13.9906 7.1443 14.5049 6.5197 14.5049 L 6.5197 14.5049 ZM 6.5197 14.5049 L 6.5197 14.5049 Z"
+										fill="#333333" />
+									<path class="svg_bus1"
+										d="M 1.5547 0 C 0.6995 0 0 0.7112 0 1.5806 L 0 11.775 C 0 12.6439 0.6995 13.3552 1.5547 13.3552 L 3.4518 13.3552 C 3.4518 11.6354 4.8278 10.2363 6.5197 10.2363 C 8.2112 10.2363 9.5875 11.6357 9.5875 13.3552 L 18.7246 13.3552 C 18.7246 11.6354 20.1008 10.2363 21.7925 10.2363 C 23.484 10.2363 24.8604 11.6357 24.8604 13.3552 L 26.4453 13.3552 C 27.3005 13.3552 28 12.6439 28 11.775 L 28 8.1399 C 28 7.2703 27.86 5.8623 27.6891 5.0103 L 26.7563 1.5485 C 26.585 0.6968 25.7458 0 24.8907 0 L 1.5547 0 L 1.5547 0 ZM 21.5397 6.6687 L 21.5397 0.9471 L 24.6193 0.9471 C 25.2606 0.9471 25.8809 1.4716 25.9979 2.1124 L 26.8335 5.5033 C 26.9326 6.0457 26.64 6.5033 26.1594 6.6313 L 25.4479 4.9175 C 25.3477 4.6763 25.0741 4.5629 24.8369 4.6648 C 24.5997 4.7667 24.4885 5.0448 24.5884 5.2864 L 25.1626 6.6687 L 21.54 6.6687 L 21.5397 6.6687 ZM 14.6221 0.9471 L 20.6072 0.9471 L 20.6072 6.6687 L 14.6221 6.6687 L 14.6221 0.9471 ZM 7.7045 0.9471 L 13.6897 0.9471 L 13.6897 6.6687 L 7.7045 6.6687 L 7.7045 0.9471 ZM 0.9531 2.1328 C 0.9531 1.4807 1.4778 0.9471 2.1191 0.9471 L 6.7717 0.9471 L 6.7717 6.6687 L 2.1191 6.6687 C 1.4778 6.6687 0.9531 6.1353 0.9531 5.4835 L 0.9531 2.1328 ZM 0.9531 5.4835 L 0.9531 5.4835 Z"
+										fill="#333333" /></svg></span>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-hand-right">01-01-2018</span>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-hand-left">08-01-2018</span>
+						</p>
+					</div>
+
+					<button class="btn btn-primary col-xs-12" type="button"
+						onclick="promptForName(5)">Rezervisi</button>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h4>
+						Herceg Novi <span class="label label-info info"> <span
+							data-toggle="tooltip" title="Viewed">2.5K <b
+								class="glyphicon glyphicon-eye-open"></b></span> <span
+							data-toggle="tooltip" title="Favorited">18 <b
+								class="glyphicon glyphicon-star"></b></span> <span
+							data-toggle="tooltip" title="Bootstrap version">3.0.0</span>
+						</span>
+					</h4>
+					<img
+						src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Widok_na_miasto_z_portu_w_Herceg_Novi_01.jpg/1200px-Widok_na_miasto_z_portu_w_Herceg_Novi_01.jpg"
+						alt="...">
+
+					<div class="col-md-3 col-xs-6 search_offer_info">
+
+						<p>
+							<span class="glyphicon glyphicon-calendar">Dana:7/Noći:6</span>
+						</p>
+						<p>
+							<span><svg class="svg_bus" viewBox="0 0 28 16"
+									version="1.1" xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+									x="0px" y="0px" width="28px" height="16px">
+									<path class="svg_bus3"
+										d="M 21.7925 10.7103 C 20.3549 10.7103 19.1907 11.894 19.1907 13.3552 C 19.1907 14.8164 20.3549 16 21.7925 16 C 23.2296 16 24.3942 14.8164 24.3942 13.3552 C 24.3942 11.894 23.2292 10.7103 21.7925 10.7103 L 21.7925 10.7103 ZM 21.7925 14.5049 C 21.1678 14.5049 20.6611 13.9906 20.6611 13.3552 C 20.6611 12.7197 21.1678 12.2053 21.7925 12.2053 C 22.417 12.2053 22.9233 12.7197 22.9233 13.3552 C 22.9233 13.9906 22.417 14.5049 21.7925 14.5049 L 21.7925 14.5049 ZM 21.7925 14.5049 L 21.7925 14.5049 Z"
+										fill="#333333" />
+									<path class="svg_bus2"
+										d="M 6.5197 10.7103 C 5.082 10.7103 3.918 11.894 3.918 13.3552 C 3.918 14.8164 5.082 16 6.5197 16 C 7.9565 16 9.121 14.8164 9.121 13.3552 C 9.121 11.894 7.9565 10.7103 6.5197 10.7103 L 6.5197 10.7103 ZM 6.5197 14.5049 C 5.8948 14.5049 5.3883 13.9906 5.3883 13.3552 C 5.3883 12.7197 5.8948 12.2053 6.5197 12.2053 C 7.1443 12.2053 7.6503 12.7197 7.6503 13.3552 C 7.6503 13.9906 7.1443 14.5049 6.5197 14.5049 L 6.5197 14.5049 ZM 6.5197 14.5049 L 6.5197 14.5049 Z"
+										fill="#333333" />
+									<path class="svg_bus1"
+										d="M 1.5547 0 C 0.6995 0 0 0.7112 0 1.5806 L 0 11.775 C 0 12.6439 0.6995 13.3552 1.5547 13.3552 L 3.4518 13.3552 C 3.4518 11.6354 4.8278 10.2363 6.5197 10.2363 C 8.2112 10.2363 9.5875 11.6357 9.5875 13.3552 L 18.7246 13.3552 C 18.7246 11.6354 20.1008 10.2363 21.7925 10.2363 C 23.484 10.2363 24.8604 11.6357 24.8604 13.3552 L 26.4453 13.3552 C 27.3005 13.3552 28 12.6439 28 11.775 L 28 8.1399 C 28 7.2703 27.86 5.8623 27.6891 5.0103 L 26.7563 1.5485 C 26.585 0.6968 25.7458 0 24.8907 0 L 1.5547 0 L 1.5547 0 ZM 21.5397 6.6687 L 21.5397 0.9471 L 24.6193 0.9471 C 25.2606 0.9471 25.8809 1.4716 25.9979 2.1124 L 26.8335 5.5033 C 26.9326 6.0457 26.64 6.5033 26.1594 6.6313 L 25.4479 4.9175 C 25.3477 4.6763 25.0741 4.5629 24.8369 4.6648 C 24.5997 4.7667 24.4885 5.0448 24.5884 5.2864 L 25.1626 6.6687 L 21.54 6.6687 L 21.5397 6.6687 ZM 14.6221 0.9471 L 20.6072 0.9471 L 20.6072 6.6687 L 14.6221 6.6687 L 14.6221 0.9471 ZM 7.7045 0.9471 L 13.6897 0.9471 L 13.6897 6.6687 L 7.7045 6.6687 L 7.7045 0.9471 ZM 0.9531 2.1328 C 0.9531 1.4807 1.4778 0.9471 2.1191 0.9471 L 6.7717 0.9471 L 6.7717 6.6687 L 2.1191 6.6687 C 1.4778 6.6687 0.9531 6.1353 0.9531 5.4835 L 0.9531 2.1328 ZM 0.9531 5.4835 L 0.9531 5.4835 Z"
+										fill="#333333" /></svg></span>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-hand-right">04-08-2018</span>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-hand-left">11-08-2018</span>
+						</p>
+					</div>
+
+					<button class="btn btn-primary col-xs-12" type="button"
+						onclick="promptForName(6)">Rezervisi</button>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script
+		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script
+		src='http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js'></script>
+
+
+
+</body>
+
+</html>
